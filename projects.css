@@ -1,0 +1,63 @@
+body {
+    font-family: #fff,sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #a380c9;
+    text-decoration-color: #fff;
+    padding: 2em;
+    text-align: center;
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2em;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .project-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .project-card p {
+    line-height: 1.5;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background-color: #33cc99;
+  }
+  
+  /* Replace placeholders with your actual image file paths */
+  img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  

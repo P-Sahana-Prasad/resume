@@ -1,0 +1,65 @@
+body {
+    font-family: serif;
+    color: #333;
+    background-color: #f8f0e0;
+    padding: 2em;
+  }
+  
+  header {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 1em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .awards {
+    width: 60%;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .awards h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+  
+  .awards ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .awards li {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .awards li i {
+    font-size: 1.5em;
+    margin-right: 1em;
+  }
+  
+  .awards li span {
+    font-size: 0.9em;
+    font-style: italic;
+  }
+  
+  .special {
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    padding-top: 1em;
+  }
+  
+  .special i {
+    color: gold;
+  }
+  

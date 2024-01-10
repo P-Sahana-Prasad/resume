@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    padding: 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  p.intro {
+    text-align: center;
+    font-size: 1.2em;
+    color: #808080;
+    padding-bottom: 1em;
+  }
+  
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em;
+  }
+  
+  .skill-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 0.5em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .skill-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .programming {
+    background-color: #f0f8ff;
+    color: #2980b9;
+  }
+  
+  .tools {
+    background-color: #f8f0f0;
+    color: #f39c12;
+  }
+  
+  .soft {
+    background-color: #faf8f0;
+    color: #2ecc71;
+  }
+  
+  .skill-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .skill-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skill-card li {
+    margin-bottom: 0.5em;
+  }
+  
+  .level {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .expert {
+    color: #222
+  }  
