@@ -1,0 +1,37 @@
+import numpy as np
+x=np.array(([2,9],[1,5],[3,6]),dtype=float)
+y=np.array(([92],[86],[89]),dtype=float)
+X=x/np.amax(x,axis=0)
+Y=y/100
+def sigmoid(X):
+    return 1/(1+np.exp(-X))
+def det(X):
+    return X*(1-X)
+epoach=7000
+lr=0.1
+i=2
+h=3
+o=1
+wh=np.random.uniform(size=(i,h))
+bh=np.random.uniform(size=(1,h))
+wout=np.random.uniform(size=(h,o))
+bout=np.random.uniform(size=(1,o))
+
+for x in range(epoach):
+    hip1=np.dot(X,wh)
+    hip=hip1+bh
+    hido=sigmoid(hip)
+    ins1=np.dot(hido,wout)
+    ins=ins1+bout
+    out=sigmoid(ins)
+    
+    eo=Y-out
+    outg=det(out)
+    d_out=eo*outg
+    eh=d_out.dot(wout.T)
+    hidg=det(hido)
+    d_hid=eh*hidg
+    wout+=hido.T.dot(d_out)*lr
+print("input"+str(X))
+print("hidden"+str(Y))
+print("output",out)
