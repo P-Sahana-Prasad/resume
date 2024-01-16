@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+t=1
+d=pd.read_csv("prog3.csv")
+x=np.array(d.total_bill)
+print(x)
+x=x[:,np.newaxis]
+print(len(x))
+y=np.array(d.tip)
+xe=np.array([i/10 for i in range(500)])
+xe=xe[:,np.newaxis]
+ye=[]
+c=0
+for r in range(len(xe)):
+    w=np.exp(-np.sum((x-xe[r])**2,axis=1)/(2*t**2))
+    W=np.diag(w)
+    f1=np.linalg.inv(x.T.dot(W).dot(x))
+    p=f1.dot(x.T).dot(W).dot(y)
+    pr=xe[r].dot(p)
+    ye.append(pr)
+    c+=1
+print(len(ye))     
+ye=np.array(ye)
+plt.plot(x.squeeze(),y,'o')
+plt.plot(xe.squeeze(),ye,'o')
+plt.show()
