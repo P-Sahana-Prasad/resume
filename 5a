@@ -1,0 +1,50 @@
+import numpy
+
+genes=2
+cr=10
+mat=6
+ofsi=cr-mat
+lb=-5
+ub=5
+popsi=(cr,genes)
+gen=1
+pop=numpy.random.uniform(lb,ub,popsi)
+
+for gen in range(gen):
+    print("Generations:",gen+1)
+    fitness=numpy.sum(pop*pop,axis=1)
+    print("population :",pop)
+    print("fitness calculation :",fitness)
+    parent=numpy.empty((mat,pop.shape[1]))
+    for p in range(mat):
+        fittestindex=numpy.where(fitness==numpy.max(fitness))
+        fittestindex=fittestindex[0][0]
+        parent[p,:]=pop[fittestindex,:]
+        fitness[fittestindex]=-1
+    print("parents :",parent)
+    offspring=numpy.empty((ofsi,pop.shape[1]))
+    for k in range(ofsi):
+        cross=numpy.random.randint(0,genes)
+        pa1=k%parent.shape[0]
+        pa2=(k+1)%parent.shape[0]
+        offspring[k,0:cross]=parent[pa1,0:cross]
+        offspring[k,cross:]=parent[pa2,cross]
+    print("offspring after crossover",offspring)
+    
+    for index in range(offspring.shape[0]):
+        ri=numpy.random.randint(1,genes)
+        rv=numpy.random.uniform(lb,ub,1)
+        offspring[index,ri]=offspring[index,ri]+rv
+    print("offspring after mutation",offspring)
+    
+    pop[0:parent.shape[0],:]=parent
+    pop[parent.shape[0]:,:]=offspring
+    print("new pop",pop)
+    
+    fitness=numpy.sum(pop*pop,axis=1)
+    fittestindex=numpy.where(fitness==numpy.max(fitness))
+    fittestindex=fittestindex[0][0]
+    fit=pop[fittestindex,:]
+    best=fitness[fittestindex]
+print("fit",fit)
+print("best",best)
